@@ -8,7 +8,7 @@ const userRoutes = express.Router()
 
 userRoutes.get("/getusers", getUsers )    //all users
 
-userRoutes.get("/searchuser", searchUser)
+userRoutes.get("/searchuser", searchUser)  //single user
 
 //post
 
