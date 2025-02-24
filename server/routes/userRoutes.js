@@ -2,6 +2,8 @@ const express = require('express')
 
 const { getUsers, addUser, deleteUser, updateUser, searchUser } = require('../controllers/userControllers')
 
+const { validationmiddleware } = require('../middlewares/userDetailsValidation')
+
 const userRoutes = express.Router()
 
 //get
@@ -12,7 +14,7 @@ userRoutes.get("/searchuser", searchUser)  //single user
 
 //post
 
-userRoutes.post("/adduser", addUser)
+userRoutes.post("/adduser", validationmiddleware, addUser)
 
 //put 
 
